@@ -20,7 +20,7 @@ export default defineConfig(({ command }) => ({
   },
   envDir: path.resolve(__dirname),
   build: {
-    outDir: path.resolve(__dirname, "dist/public"),
+    outDir: process.env.VERCEL ? path.resolve(__dirname, "dist") : path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
   },
   server: {
