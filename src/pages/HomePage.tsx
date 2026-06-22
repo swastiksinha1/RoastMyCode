@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Flame, Code2, ChevronDown, Sparkles, Terminal, Zap, Github, Skull, UserSquare2 } from 'lucide-react';
 import { trpc } from '@/providers/trpc';
+import { toast } from "sonner";
 import LoadingRoast from '@/components/LoadingRoast';
 import Editor from '@monaco-editor/react';
 
@@ -84,7 +85,10 @@ export default function HomePage() {
       let rawUrl = githubUrl.trim();
       
       if (rawUrl.includes('github.com') && !rawUrl.includes('/blob/') && !rawUrl.startsWith('https://raw.githubusercontent.com')) {
-        alert("Please provide a link to a specific code file, not a whole repository! (Navigate to the exact file in GitHub and copy that URL)");
+        toast.error("Invalid GitHub Link", {
+          description: "Please provide a link to a specific code file, not a whole repository. (Navigate to the exact file and copy that URL)",
+          duration: 5000,
+        });
         setIsFetchingGithub(false);
         return;
       }
