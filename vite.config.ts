@@ -27,4 +27,4 @@ export default defineConfig(({ command }) => ({
     port: 3000,
     allowedHosts: true,
   },
-});
+}));
