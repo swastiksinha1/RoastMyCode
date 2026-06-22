@@ -83,6 +83,12 @@ export default function HomePage() {
       setIsFetchingGithub(true);
       let rawUrl = githubUrl.trim();
       
+      if (rawUrl.includes('github.com') && !rawUrl.includes('/blob/') && !rawUrl.startsWith('https://raw.githubusercontent.com')) {
+        alert("Please provide a link to a specific code file, not a whole repository! (Navigate to the exact file in GitHub and copy that URL)");
+        setIsFetchingGithub(false);
+        return;
+      }
+
       if (rawUrl.startsWith('https://raw.githubusercontent.com')) {
         // Already a raw URL, keep as is
       } else if (rawUrl.includes('github.com') && rawUrl.includes('/blob/')) {
