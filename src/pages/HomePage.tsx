@@ -85,8 +85,8 @@ export default function HomePage() {
       let rawUrl = githubUrl.trim();
       
       if (rawUrl.includes('github.com') && !rawUrl.includes('/blob/') && !rawUrl.startsWith('https://raw.githubusercontent.com')) {
-        toast.error("Invalid GitHub Link", {
-          description: "Please provide a link to a specific code file, not a whole repository. (Navigate to the exact file and copy that URL)",
+        toast.info("That looks like a repository link!", {
+          description: "Please navigate to the specific file containing the source code you want to roast, and paste that URL instead.",
           duration: 5000,
         });
         setIsFetchingGithub(false);
