@@ -1,112 +1,106 @@
 <div align="center">
   <h1>🔥 RoastMyCode</h1>
-  <p><strong>An AI-powered app that brutally roasts your code, hosts code battles, and features a Hall of Shame.</strong></p>
+  <p><strong>Because your ego needs checking, and your code is probably garbage.</strong></p>
+  <p><em>An AI-powered app that brutally roasts your "clean architecture", hosts code battles, and immortalizes your worst mistakes in the Hall of Shame.</em></p>
 </div>
 
 ---
 
-## 🌟 Features
+## 🌟 Features (Or: Ways We Will Hurt Your Feelings)
 
-- **🤖 AI Code Roasting**: Submit your code snippets and let the AI tear them apart with brutal, funny, and insightful roasts.
-- **⚔️ Code Battles**: Pit two code snippets against each other to see which one is "less terrible."
-- **🏆 Hall of Shame**: A curated collection of the most hilariously bad code snippets ever submitted.
-- **✨ Modern UI/UX**: Immersive fluid animations, beautiful typography, and responsive design built with Tailwind CSS, shadcn/ui, and GSAP.
+- **🤖 AI Code Roasting**: Miss the days when senior developers would publicly humiliate you in PR reviews? We’ve automated the trauma! Submit your code snippets and let our AI tear them apart with brutal, witty, and entirely accurate insults.
+- **⚔️ Code Battles**: Pit two code snippets against each other to settle the age-old debate of "Which one of us is slightly less terrible at programming?"
+- **🏆 Hall of Shame**: A curated museum of the most hilariously bad code ever submitted. Your legacy of `while(true)` and naming variables `data2` will live here forever.
+- **✨ Shiny UI/UX**: We built an immersive, fluid, and beautifully animated frontend because we needed something pretty to distract you from how awful your code logic is.
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack (Over-Engineered for Your Pleasure)
 
 ### Frontend
-- **React 19** + **Vite**
-- **TypeScript**
-- **Tailwind CSS** + **shadcn/ui**
-- **Framer Motion** + **GSAP** (Animations)
-- **Zustand / Context API** (State Management)
-- **tRPC Client** (Type-safe API calls)
+- **React 19 & Vite**: Because writing plain HTML/JS doesn't make you feel like a "real engineer."
+- **TypeScript**: To give you a false sense of security before the runtime errors hit.
+- **Tailwind CSS & shadcn/ui**: For when you want things to look nice but refuse to write actual CSS.
+- **Framer Motion & GSAP**: Silky smooth animations to soften the blow of a brutal roast.
+- **tRPC Client**: Type-safety all the way down. 
 
 ### Backend
-- **Node.js** + **Hono**
-- **tRPC** (Type-safe routing)
-- **Drizzle ORM** (Database mapping)
-- **PostgreSQL** / **Neon Database**
+- **Node.js & Hono**: Blazing fast backend to deliver insults with minimal latency.
+- **tRPC**: Because writing REST endpoints in 2026 is so passé.
+- **Drizzle ORM**: Because writing raw SQL is scary.
+- **PostgreSQL / Neon Database**: The only reliable thing in this entire project.
 
 ---
 
-## 📂 Project Structure
+## 📂 Project Structure (For When You Want To Roast *Our* Code)
 
 ```text
 app/
-├── api/                  # Backend Hono/tRPC server routes and logic
-├── db/                   # Database schema and migrations (Drizzle ORM)
-├── public/               # Static assets
+├── api/                  # Where the AI judges you
+├── db/                   # Where your shame is permanently stored
+├── public/               # Stuff the browser just eats
 └── src/
-    ├── components/       # Reusable UI components
-    ├── hooks/            # Custom React hooks
-    ├── lib/              # Utility functions and configurations
-    ├── pages/            # Application routes (Home, Roast, Battle, HallOfShame)
-    ├── providers/        # React context providers
-    ├── App.tsx           # Main application entry point
-    └── index.css         # Global styles
+    ├── components/       # UI bits that we duct-taped together
+    ├── hooks/            # Code we didn't know where else to put
+    ├── lib/              # Things we copy-pasted from StackOverflow
+    ├── pages/            # Where the magic (and bullying) happens
+    ├── providers/        # Context boilerplate 
+    ├── App.tsx           # The glue
+    └── index.css         # The lipstick on the pig
 ```
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started (If You Must)
 
-Follow these steps to run the project locally.
+Want to run this locally? Fine. Follow these steps. If it doesn't work, it's a skill issue.
 
 ### 1. Prerequisites
-- **Node.js** (v18 or higher)
+- **Node.js** (v18+)
 - **npm** or **yarn**
-- **PostgreSQL** database (Local or hosted like Neon/Supabase)
+- **PostgreSQL** (Neon, Supabase, or your noisy laptop fan local setup)
 
 ### 2. Installation
-Clone the repository and install dependencies:
+Clone this masterpiece and install the dependencies you’ll inevitably never update:
 ```bash
-# Install dependencies
 npm install
 ```
 
 ### 3. Environment Variables
-Copy the `.env.example` file to `.env` and configure your database connection and other required variables:
+Copy `.env.example` to `.env` and paste your database URL. Do not commit your `.env` file, we already have enough material for the Hall of Shame.
 ```bash
 cp .env.example .env
 ```
-Ensure your `DATABASE_URL` is set to a valid PostgreSQL connection string.
 
 ### 4. Database Setup
-Push the Drizzle schema to your database to create the necessary tables:
+Push the Drizzle schema. If it fails, try turning it off and on again:
 ```bash
 npm run db:push
 ```
 
 ### 5. Running the App
-Start the Vite development server:
+Spin it up:
 ```bash
 npm run dev
 ```
-
-Your app should now be running at `http://localhost:5173`.
+Go to `http://localhost:5173`. Prepare to be roasted.
 
 ---
 
 ## 📜 Available Scripts
 
-- `npm run dev`: Starts the Vite development server.
-- `npm run build`: Builds the frontend for production.
-- `npm run build:node`: Builds the Vite frontend and compiles the backend Hono server.
-- `npm run start`: Runs the production server using the compiled node build.
-- `npm run lint`: Runs ESLint to check for code issues.
-- `npm run format`: Runs Prettier to format the codebase.
-- `npm run test`: Runs unit tests via Vitest.
-- `npm run db:push`: Pushes the current Drizzle schema directly to the database.
-- `npm run db:generate`: Generates new Drizzle migrations based on schema changes.
-- `npm run db:migrate`: Applies pending Drizzle migrations.
+- `npm run dev`: Starts the local server.
+- `npm run build`: Bundles the app (and your hopes and dreams).
+- `npm run build:node`: Prepares the backend so it can judge you in production.
+- `npm run start`: Runs the production server.
+- `npm run lint`: Tells you your code sucks *before* the AI does.
+- `npm run format`: Prettier will fix your hideous indentation.
+- `npm run db:push`: Shoves the schema into your database.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
+Found a bug? Want to add a feature? Think you can roast better than the AI? Open an issue or a PR. We promise to review it (and probably roast it).
 
 ## 📄 License
 
-This project is open-source and available under the MIT License.
+MIT License. Do whatever you want with it, just don't blame us when your feelings get hurt.
